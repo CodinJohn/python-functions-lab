@@ -64,8 +64,11 @@ print('Exercise 3:', apply_discount(100, 25))
 #
 # Define the function and then call it below.
 
-def convert_temperature(temperature, unit):
-    return
+def convert_temperature(temp, unit):
+    if unit.upper() == 'C':
+        return (temp * 9/5) + 32
+    elif unit.upper() == 'F':
+        return (temp - 32) * 5/9
 
 print('Exercise 4: Convert 0°C to Fahrenheit:', convert_temperature(0, 'C'))
 print('Exercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
@@ -80,9 +83,10 @@ print('Exercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
 #
 # Define the function and then call it below.
 
+def sum_to(n):
+        return sum(range(1, n +1))
 
-
-print('Exercise 5:', sum_to(6))
+print('Exercise 5:', sum_to(10))
 
 # Exercise 6: Find the Largest Number
 #
@@ -94,9 +98,10 @@ print('Exercise 5:', sum_to(6))
 #
 # Define your function and test it with different inputs.
 
+def largest(a, b, c):
+    return max(a, b, c)
 
-
-print('Exercise 6:', largest(1, 2, 3))
+print('Exercise 6:', largest(10, 4, 2))
 
 
 # Exercise 7: Calculate a Tip
@@ -109,7 +114,8 @@ print('Exercise 6:', largest(1, 2, 3))
 #
 # Write your function and test its output below.
 
-
+def calculate_tip(bill_amount, tip_percentage):
+        return bill_amount * (tip_percentage / 100)
 
 print('Exercise 7:', calculate_tip(50, 20))
 
@@ -124,9 +130,13 @@ print('Exercise 7:', calculate_tip(50, 20))
 #
 # Define the function and call it with different sets of numbers to test.
 
+def product(*args):
+    total = 1
+    for arg in args:
+        total *= arg
+    return total
 
-
-print('Exercise 8:', product(2, 5, 5))
+print('Exercise 8:', product(-1, 4))
 
 # Exercise 9: Basic Calculator
 #
@@ -143,6 +153,14 @@ print('Exercise 8:', product(2, 5, 5))
 #
 # Define the function and then call it below.
 
+def basicCalculator(numA, numB, operator):
+    if operator == 'add':
+        return numA + numB
+    elif operator == 'subtract':
+        return numA - numB
+    elif operator == 'multiply':
+        return numA * numB
+    elif operator == 'divide':
+        return numA / numB
 
-
-print('Exercise 9 Result:', basicCalculator(10, 5, "subtract"))
+print('Exercise 9 Result:', basicCalculator(10, 5, "divide"))
